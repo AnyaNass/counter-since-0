@@ -1,0 +1,20 @@
+ul {
+	/*list-style-type:decimal-leading-zero;*/
+	list-style: none;
+	padding-left: 0px;
+	counter-reset: item;
+}
+
+ul>li {
+	display: table;
+	counter-increment: item;
+}
+
+ul>li:before {
+	display: table-cell;
+	padding: 0 0.5em 0 0;
+	content: counter(item) ".";
+	font-weight: bold;
+	counter-increment: li;
+	content: counter(item, decimal-leading-zero);
+}
